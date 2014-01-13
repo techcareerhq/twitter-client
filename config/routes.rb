@@ -5,7 +5,7 @@ TwitterApi::Application.routes.draw do
 
   get "static_pages/home"
 
-  get "api/retrieveTweets/:id" => "api_controller#retrieveTweets"
+  get "api/retrieveTweets/:id" => "api#retrieveTweets"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
