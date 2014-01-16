@@ -10,7 +10,7 @@ $.ajax({
 		.append(value.user.name+"<br>")
 		.append("Followers: "+value.user.followers_count+"<br>")
 		.append("Retweeted: "+value.retweet_count+"<br>")
-		.append("<a href='http://twitter.com/"+value.user.screen_name+"'>"+value.user.screen_name+"</a><br><br>");
+		.append("<a href='http://twitter.com/"+value.user.screen_name+"'>"+value.user.screen_name+"</a><br>");
 		// $.each(user.entities.hashtags, function(key, value){
 		// 	.append("#"+value.text+"    ");
 		// });
@@ -20,6 +20,11 @@ $.ajax({
     			+value.in_reply_to_user_id_str+"</a></span>");
 
 		}
+		// if (response.statuses.entities.media){
+		// 	$(".container").append("<img src='"+value.value.entities.media.media_url+"'/>");
+
+		// }
+		$(".container").append("<br><br>")
 		
     });
   }
