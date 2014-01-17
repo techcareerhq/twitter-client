@@ -41,6 +41,7 @@ GEM
       execjs
     coffee-script-source (1.6.3)
     descendants_tracker (0.0.3)
+    ejs (1.0.0)
     equalizer (0.0.9)
     erubis (2.7.0)
     execjs (2.0.2)
@@ -130,6 +131,7 @@ PLATFORMS
 
 DEPENDENCIES
   coffee-rails (~> 3.2.1)
+  ejs
   jquery-rails
   rails (= 3.2.13)
   sass-rails (~> 3.2.3)
