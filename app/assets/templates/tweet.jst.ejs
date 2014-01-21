@@ -1,0 +1,70 @@
+
+
+
+  <button class="sort" data-sort="name">
+    Sort by name/author
+  </button>
+
+  <button class="sort" data-sort="retweeted">
+    Sort by retweets
+  </button>
+  <button class="sort" data-sort="created">
+    Sort by date
+  </button>
+  <button class="sort" data-sort="followers">
+    Sort by followers
+  </button>
+  <button class="sort" data-sort="influence">
+    Sort by influence
+  </button>
+
+<table class ='info'>
+	<tr>
+		<td colspan = 3 class =border>
+		</td>
+	</tr>
+	<tr>
+		<td colspan = 3 class ='tweet'>
+			<%= status.text %>
+		</td>
+	</tr>
+	<tr>
+		<td class='name'>
+			Author: 
+			<%= status.user.name %>
+		</td>
+		<td class='retweeted'>
+			Retweeted: 
+			<%= status.retweet_count %>
+		</td>
+		<td class='created'>
+			Created on: 
+			<%= status.created_at %>
+		</td> 
+	</tr>
+	<tr>
+		<td class='name'>
+			User Name: 
+			<%= status.user.screen_name %>
+		</td>
+		<td class='followers'>
+			Followers: 
+			<%= status.user.followers_count %>
+		</td>
+		<td class='influence'>
+			Influence Score:
+			<%= (status.user.followers_count +(status.retweet_count*1000)) %>
+		</td>
+	<tr>
+		<td colspan=3 class=pic><!-- 
+			//<% if ('media' in status.entities){ %>
+			//<% debugger %>
+		//	<%	$(this).append("<img src='"+status.entities.media[0].media_url+"' />");} %> -->
+		</td>
+	</tr>
+	<tr>
+		<td colspan = 3 class =border>
+		</td>
+	</tr>
+</table>
+
