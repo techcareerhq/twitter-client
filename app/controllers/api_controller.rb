@@ -1,15 +1,22 @@
 class ApiController < ApplicationController
-  def retrieveTweets
 
-    API_KEYS = YAML::load_file("#{Rails.root}/config/api_keys.yml")[Rails.env]
+require 'twitter'
+
+  def retrieveTweets
+    page = params[:page].to_i
 
     client = Twitter::REST::Client.new do |config|
-      config.consumer_key    = API_KEYS['twitter']['api_key']
-      config.consumer_secret = API_KEYS['twitter']['api_secret']
+      config.consumer_key    = CONSUMER_KEY
+      config.consumer_secret = CONSUMER_SECRET
+      config.access_token        = OAUTH_KEY
+      config.access_token_secret = OAUTH_SECRET
     end
 
-    # respond_to do |format|
-    #   format.json { render json: tweets }
-    # end
+
+    tweets = client.search('stanford', options = { :count => 5 , :since_id => page})
+    
+    respond_to do |format|
+      format.json { render json: tweets }
+    end
   end
 end

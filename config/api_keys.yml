@@ -2,6 +2,8 @@ defaults: &defaults
   twitter:
     api_key: ""
     api_secret: ""
+    oauth_key: ""
+    oauth_secret: ""
 
 development:
   <<: *defaults
