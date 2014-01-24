@@ -20,6 +20,11 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+group :development do
+  gem 'pry'
+  gem 'pry-debugger'
+end
+
 gem 'jquery-rails'
 
 gem "twitter", "~> 5.5.1"
