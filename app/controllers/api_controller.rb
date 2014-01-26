@@ -3,20 +3,39 @@ class ApiController < ApplicationController
 require 'twitter'
 
   def retrieveTweets
-    page = params[:page].to_i
-
-    client = Twitter::REST::Client.new do |config|
-      config.consumer_key    = CONSUMER_KEY
-      config.consumer_secret = CONSUMER_SECRET
-      config.access_token        = OAUTH_KEY
-      config.access_token_secret = OAUTH_SECRET
+    if params[:page] == '1'
+      file = File.join(Rails.root, 'app', 'assets', 'javascripts', 'stanford1.json')
+    elsif params[:page] == '2'
+      file = File.join(Rails.root, 'app', 'assets', 'javascripts', 'stanford2.json')
+    elsif params[:page] == '3'
+      file = File.join(Rails.root, 'app', 'assets', 'javascripts', 'stanford3.json')
+    elsif params[:page] == '4'
+      file = File.join(Rails.root, 'app', 'assets', 'javascripts', 'stanford4.json')
+    elsif params[:page] == '5'
+      file = File.join(Rails.root, 'app', 'assets', 'javascripts', 'stanford5.json')
+    elsif params[:page] == '6'
+      file = File.join(Rails.root, 'app', 'assets', 'javascripts', 'stanford6.json')
     end
 
+    tweets = File.read(file)
 
-    tweets = client.search('stanford', options = { :count => 5 , :since_id => page})
-    
+
     respond_to do |format|
       format.json { render json: tweets }
     end
   end
+
+  def postTweet
+    if (params.has_key?(:message) && params.has_key?(:username))
+    message = "Your response has been successfully posted."
+    respond_to do |format|
+      format.json { render json: message }
+    end
+
+  else
+    message = 'There was an error with your response.'
+    respond_to do |format|
+      format.json { render json:  { :errors => message }, , :status => 422}
+    end
+
 end
