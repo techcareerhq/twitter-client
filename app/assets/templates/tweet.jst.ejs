@@ -2,59 +2,54 @@
 
 
 
-<table class ='info'>
-	<tbody class='list'>
-		<tr>
-			<table>
+
 			
-					<tr>
-						<td colspan = 3 class ='tweet'>
-							<%= status.text %>
-						</td>
-					</tr>
-					<tr>
-						<td class='name'>
-							Author: 
-							<%= status.user.name %>
-						</td>
-						<td class='retweeted'>
-							Retweeted: 
-							<%= status.retweet_count %>
-						</td>
-						<td class='created'>
-							Created on: 
-							<%= status.created_at %>
-						</td> 
-					</tr>
-					<tr>
-						<td class='name'>
-							User Name: 
-							<%= status.user.screen_name %>
-						</td>
-						<td class='followers'>
-							Followers: 
-							<%= status.user.followers_count %>
-						</td>
-						<td class='influence'>
-							Influence Score:
-							<%= (status.user.followers_count +(status.retweet_count*1000)) %>
-						</td>
-					<tr>
-						<td colspan=3 class='pic'>
-							<% if ('media' in status.entities){ %>
-								<img src="
-								<%= status.entities.media[0].media_url %>
-								" /> 
-							<% } %>
-						</td>
-					</tr>
-					<tr>
-						<td colspan = 3 class =border>
-						</td>
-					</tr>
+<li>
+	<span class ='tweet'>
+		<%= status.text %>
+	</span>
+	
+	<br>
+
+	<span class='name'>
+		Author: 
+		<%= status.user.name %>
+	</span>
+	<span class='retweeted'>
+		Retweeted: 
+		<%= status.retweet_count %>
+	</span>
+	<span class='created'>
+		Created on: 
+		<%= status.created_at %>
+	</span> 
+
+	<br>
+	
+	<span class='name'>
+		User Name: 
+		<%= status.user.screen_name %>
+	</span>
+	<span class='followers'>
+		Followers: 
+		<%= status.user.followers_count %>
+	</span>
+	<span class='influence'>
+		Influence Score:
+		<%= (status.user.followers_count +(status.retweet_count*1000)) %>
+	</span>
+
+	<br>
+
+	<% if ('media' in status.entities){ %>
+		<img src="
+		<%= status.entities.media[0].media_url %>
+		" /> 
+	<% } %>
+	<br>
+	<br>
+		
+</li>		
 				
-			</table>
-			</tr>
-		</tbody>
-</table>
+		
 

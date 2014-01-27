@@ -2,7 +2,9 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-td {
+span {
+	padding: 3px;
+	margin:2px;
 	text-align: center;
 	background-color:#f1f1f1;
     border-width:2px;
@@ -12,25 +14,35 @@ td {
     border-top-color:#d1d1d1;
     border-left-color:#d1d1d1;
     border-radius:5px;
+    line-height: 30px;
 }
-tr td.border {
-	background-color:#fffffff;
-	height: 10px;
-}
+
 .tweet {
 	text-align: left;
-	line-height: 15px;
 	color: green;
-	background-color:#f1f1f1;
-    border-width:2px;
-    border-style:solid;
-    border-bottom-color:#a1a1a1;
-    border-right-color:#a1a1a1;
-    border-top-color:#d1d1d1;
-    border-left-color:#d1d1d1;
-    border-radius:5px;
 }
-table {
-	margin: 15px;
-	border: 3px;
+
+label {  
+  cursor: pointer;
+}
+/*input {
+  display: none;
+}*/
+.name {
+	display: none;
+}
+#name-toggle:checked + .name {
+  display: block;
+}
+#retweeted-toggle:checked + .retweeted {
+  display: none;
+}
+#created-toggle:checked + .created {
+  display: none;
+}
+#followers-toggle:checked + .followers {
+  display: none;
+}
+#influence-toggle:checked + .influence {
+  display: none;
 }

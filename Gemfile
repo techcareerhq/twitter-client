@@ -23,6 +23,8 @@ end
 gem 'jquery-rails'
 
 gem "twitter", "~> 5.5.1"
+gem "ejs"
+gem 'bootstrap-sass', '~> 3.0.2.0'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
@@ -38,3 +40,4 @@ gem "twitter", "~> 5.5.1"
 
 # To use debugger
 # gem 'debugger'
+
