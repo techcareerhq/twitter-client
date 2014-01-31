@@ -16,6 +16,9 @@ span {
     border-radius:5px;
     line-height: 30px;
 }
+li {
+  list-style-type: none;
+}
 
 .tweet {
 	text-align: left;
@@ -28,11 +31,9 @@ label {
 input {
   display: none;
 }
-.name {
-	display: none;
-}
+
 #name-toggle:checked + .name {
-  display: block;
+  display: none;
 }
 #retweeted-toggle:checked + .retweeted {
   display: none;
