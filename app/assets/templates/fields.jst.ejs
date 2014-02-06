@@ -1,0 +1,23 @@
+
+
+
+var fill = function(value){
+	
+}	
+
+
+var group = function (theArray, field){
+	var friends={};
+
+	for (var i = theArray.length - 1; i >= 0; i--) {
+		
+		if (friends.hasOwnProperty(theArray[i][field])) {
+			friends[theArray[i][field]]++;
+		}
+		else {
+			friends[theArray[i][field]]=1;
+		}
+	};	
+};
+
+orderThem(statuses, 'status.retweet_count')

@@ -2,6 +2,24 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+body {
+ 
+background-color: #047060;
+background-repeat:no-repeat;
+background-attachment:fixed;
+background-position:center; 
+
+}
+.list {
+  padding: 0px;
+}
+#sideInfo {
+  background-color: black;
+  position:relative;
+ float:right;
+ width:100px;
+}
+
 span {
 	padding: 3px;
 	margin:2px;
@@ -22,7 +40,8 @@ li {
 
 .tweet {
 	text-align: left;
-	color: green;
+	color: #950f31;
+  font-weight:bold;
 }
 
 label {  
