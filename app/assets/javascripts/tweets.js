@@ -1,6 +1,10 @@
 var template = JST["tweet"],
-	friends={}
-	friendsList =[];
+	topButtons = JST["butts"]
+	friends={},
+	friendsList =[],
+	options = {
+  		valueNames: [ 'name', 'retweeted', 'created', 'followers', 'influence' ]
+	};
 
 var orderThem = function (theArray, field){
 	theArray.sort(function (a, b) {
@@ -13,54 +17,50 @@ var orderThem = function (theArray, field){
 	});		
 };
 
-var group = function (theArray){
+var group = function (theArray, field){
 	for (var i = theArray.length - 1; i >= 0; i--) {	
-		if (friends.hasOwnProperty(theArray[i].user.location)) {
-			friends[theArray[i].user.location]++;
+		if (friends.hasOwnProperty(theArray[i].field)) {
+			friends[theArray[i].field]++;
 		}
 		else {
-			friends[theArray[i].user.location]=1;
+			friends[theArray[i].field]=1;
 		}	
 	};	
-	for (var i = 0; i < friends.length; i++) {	
-		friendsList[i].push(friends.city);
-		friendsList[i].push(friends.count);
-	};
+debugger
+	friendsArrayMake();
 };
+
+function friendsArrayMake() {
+	$.each(friends, function(city, count){			
+		 friendsList.push({name: city, number: count});
+	});
+	orderThem (friendsList, 'number');
+}
+
 
 $.ajax({
   url: "/api/retrieveTweets/abcd",
   type: "GET",
   success: function(response) {
-  	window.statuses=response.statuses;
-
-  	
-	
 	$('.container').append("<div id='sideInfo'></div>");
 	$(".container").append("<div id='users' class='btn-group'></div>");
-	$('.sideinfo').text(group(statuses, 'user.location'));
-	$("#users").append("<button class='sort btn btn-default' data-sort='name'>Sort by name/author</button>");
-	$("#users").append("<button class='sort btn btn-default' data-sort='retweeted'>Sort by retweets</button>");
-	$("#users").append("<button class='sort btn btn-default' data-sort='created'>Sort by date</button>");
-	$("#users").append("<button class='sort btn btn-default' data-sort='followers'>Sort by followers</button>");
-  	$("#users").append("<button class='sort btn btn-default' data-sort='influence'>Sort by influence</button>");
+	$.each(options.valueNames, function(key, something){
+		$("#users").append("<button class='sort btn btn-default' data-sort='"+something+"'>Sort by "+something+"</button>");
+	});
 	$("#users").append("<br><br><ul class='list'></ul>");
-
 
 	orderThem(response.statuses, 'retweet_count');
 
-
-	//outout tweet info
+	//output tweet info
     $.each(response.statuses, function(key, value){
 		$(".list").append(template({status: value}));		
     });
 
     //listjs stuff
-	var options = {
-  		valueNames: [ 'name', 'retweeted', 'created', 'followers', 'influence' ]
-	};
 	window.userList = new List('users', options);
 
+	group(response.statuses, 'user.location');
+	
 
 
   }
