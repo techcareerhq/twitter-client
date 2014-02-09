@@ -1,5 +1,5 @@
 var template = JST["tweet"],
-	topButtons = JST["butts"]
+	summaryTemplate = JST["summary"],
 	friends={},
 	friendsList =[],
 	options = {
@@ -17,17 +17,18 @@ var orderThem = function (theArray, field){
 	});		
 };
 
-var group = function (theArray, field){
+function group(theArray){
 	for (var i = theArray.length - 1; i >= 0; i--) {	
-		if (friends.hasOwnProperty(theArray[i].field)) {
-			friends[theArray[i].field]++;
+		if (friends.hasOwnProperty(theArray[i].user.location)) {
+			friends[theArray[i].user.location]++;
 		}
 		else {
-			friends[theArray[i].field]=1;
+			friends[theArray[i].user.location]=1;
 		}	
 	};	
-debugger
+
 	friendsArrayMake();
+	return friendsList;
 };
 
 function friendsArrayMake() {
@@ -42,7 +43,18 @@ $.ajax({
   url: "/api/retrieveTweets/abcd",
   type: "GET",
   success: function(response) {
+  	window.statuses=response.statuses;
+
+  	
 	$('.container').append("<div id='sideInfo'></div>");
+	group(statuses);
+	
+	for (var i = 0; i < 3; i++) {
+		$('#sideInfo').append('<li>' +friendsList[i].name+ ' : ' +friendsList[i].number+'<li>');
+	};
+
+	
+
 	$(".container").append("<div id='users' class='btn-group'></div>");
 	$.each(options.valueNames, function(key, something){
 		$("#users").append("<button class='sort btn btn-default' data-sort='"+something+"'>Sort by "+something+"</button>");
@@ -59,11 +71,11 @@ $.ajax({
     //listjs stuff
 	window.userList = new List('users', options);
 
-	group(response.statuses, 'user.location');
 	
 
 
   }
-})
+});
+
 
 
