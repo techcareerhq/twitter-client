@@ -10,14 +10,21 @@ background-attachment:fixed;
 background-position:center; 
 
 }
-.list {
-  padding: 0px;
+.container{
+    width: 100%;
+    display: table;
+   
+}
+ #users {
+
+ float:left;
+ width: 900px;
 }
 #sideInfo {
-  background-color: red;
-  position:relative;
- float:right;
- width:100px;
+  background-color: #950f31;
+ color: white;
+ margin-left: 930px;
+
 }
 
 span {

@@ -1,0 +1,852 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"templat",
+				"summaryTemplate"
+			],
+			[
+				"summary",
+				"summaryTemplate"
+			],
+			[
+				"friends",
+				"friendsList"
+			],
+			[
+				"fri",
+				"friendsList"
+			],
+			[
+				"fr",
+				"friendsArrayMake"
+			],
+			[
+				"value",
+				"valueNames"
+			],
+			[
+				"for",
+				"for	for (…) {…}"
+			],
+			[
+				"ret",
+				"retweet_count"
+			],
+			[
+				"pa",
+				"padding"
+			],
+			[
+				"has",
+				"hashWord"
+			],
+			[
+				"a",
+				"append"
+			],
+			[
+				"marg",
+				"margin"
+			],
+			[
+				"tabl",
+				"table"
+			],
+			[
+				"bom",
+				"bombCount"
+			],
+			[
+				"mark",
+				"markedBomb"
+			],
+			[
+				"mak",
+				"markedBomb"
+			],
+			[
+				"bind",
+				"blindClick"
+			],
+			[
+				"bin",
+				"blindClick"
+			],
+			[
+				"bomb",
+				"bombSet"
+			],
+			[
+				"game",
+				"gameBoard"
+			],
+			[
+				"new",
+				"newBoard"
+			],
+			[
+				"border-co",
+				"border-color"
+			],
+			[
+				"b",
+				"beenClicked"
+			],
+			[
+				"click",
+				"clickTile"
+			],
+			[
+				"n",
+				"nearBomb"
+			],
+			[
+				"back",
+				"background-color"
+			],
+			[
+				"bor",
+				"border"
+			],
+			[
+				"fon",
+				"font-style"
+			],
+			[
+				"bo",
+				"border-radius"
+			],
+			[
+				"tex",
+				"text-align"
+			],
+			[
+				"ma",
+				"margin"
+			],
+			[
+				"board",
+				"boardCount"
+			],
+			[
+				"mar",
+				"margin-top"
+			],
+			[
+				"han",
+				"hangWordDisplay"
+			],
+			[
+				"le",
+				"letterList"
+			],
+			[
+				"letter",
+				"letterList"
+			],
+			[
+				"l",
+				"letterList"
+			],
+			[
+				"win",
+				"winCounter"
+			],
+			[
+				"de",
+				"deathCounter"
+			],
+			[
+				"let",
+				"letsMakeADeal"
+			],
+			[
+				"bac",
+				"background-color"
+			],
+			[
+				"ad",
+				"add"
+			],
+			[
+				"s",
+				"seeIfInWord"
+			],
+			[
+				"add",
+				"addTwoNumbers"
+			],
+			[
+				"wor",
+				"wordToPlay"
+			],
+			[
+				"check",
+				"checkLetter"
+			],
+			[
+				"wo",
+				"wordCheck"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"al",
+				"alert"
+			],
+			[
+				"table",
+				"table-cell"
+			],
+			[
+				"fu",
+				"function"
+			],
+			[
+				"margin",
+				"margin-left"
+			],
+			[
+				"ba",
+				"background-color"
+			],
+			[
+				"num",
+				"num4"
+			],
+			[
+				"inlin",
+				"inline-block"
+			],
+			[
+				"movie",
+				"movieName"
+			],
+			[
+				"font",
+				"font-style"
+			],
+			[
+				"te",
+				"text-align"
+			],
+			[
+				"text",
+				"text-decoration"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "app/assets/templates/tweet.jst.ejs",
+			"settings":
+			{
+				"buffer_size": 746,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/assets/javascripts/tweets.js",
+			"settings":
+			{
+				"buffer_size": 1777,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "\n<ul>\n<% for (var i = 0; i < 3; i++) { %>\n	<% $('#sideInfo').append(%> \n	<li> <%=friendsList[i] %> <li>\n		<% ); %>\n	<%	};	%>\n</li>",
+			"file": "app/assets/templates/summary.ejs",
+			"file_size": 41,
+			"file_write_time": 1391977585000000,
+			"settings":
+			{
+				"buffer_size": 130,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/assets/stylesheets/static_pages.css.scss",
+			"settings":
+			{
+				"buffer_size": 1172,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/assets/javascripts/tweets.json",
+			"settings":
+			{
+				"buffer_size": 36484,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 47.0,
+		"selected_items":
+		[
+			[
+				"install package",
+				"Package Control: Install Package"
+			],
+			[
+				"pa",
+				"Package Control: Install Package"
+			],
+			[
+				"package in",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 521.0
+	},
+	"console":
+	{
+		"height": 125.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/seanglang/Desktop/webbly/techcareer/Projects/twitter/app/assets/stylesheets/application.css.scss",
+		"/Users/seanglang/Desktop/webbly/techcareer/Projects/twitter/app/views/api/retrieveTweets.html.erb",
+		"/Users/seanglang/Desktop/webbly/techcareer/Projects/twitter/app/assets/javascripts/tweets.js",
+		"/Users/seanglang/Desktop/webbly/techcareer/Projects/twitter/app/assets/templates/fields.jst.ejs",
+		"/Users/seanglang/Desktop/webbly/techcareer/Projects/twitter/app/assets/stylesheets/static_pages.css.scss",
+		"/Users/seanglang/Desktop/webbly/techcareer/Projects/twitter/app/assets/templates/headsup.jst.ejs",
+		"/Users/seanglang/Desktop/webbly/techcareer/Projects/twitter/app/assets/stylesheets/application.css",
+		"/Users/seanglang/Desktop/webbly/techcareer/Projects/twitter/app/views/layouts/application.html.erb",
+		"/Users/seanglang/Desktop/webbly/techcareer/Projects/twitter/app/assets/javascripts/application.js",
+		"/Users/seanglang/Desktop/webbly/techcareer/Projects/twitter/app/assets/javascripts/tweets.json",
+		"/Users/seanglang/Desktop/twittertest/test.html",
+		"/Users/seanglang/Desktop/tweets.js",
+		"/Users/seanglang/Desktop/tweetsA.js",
+		"/Users/seanglang/Desktop/webbly/techcareer/Projects/twitter/app/assets/javascripts/tweets2.js",
+		"/Users/seanglang/Desktop/webbly/techcareer/Projects/twitter/doc/README_FOR_APP",
+		"/Users/seanglang/Desktop/webbly/techcareer/Projects/twitter/app/assets/templates/intweet.jst.ejs",
+		"/Users/seanglang/Desktop/webbly/techcareer/Projects/twitter/app/views/static_pages/home.html.erb",
+		"/Users/seanglang/Desktop/webbly/techcareer/Projects/Minesweeper/Minesweeper.js",
+		"/Users/seanglang/Desktop/webbly/techcareer/Projects/Minesweeper/minesweeper.html",
+		"/Users/seanglang/Desktop/webbly/techcareer/Projects/twitter/Gemfile",
+		"/Users/seanglang/Desktop/webbly/techcareer/Projects/twitter/app/assets/templates/tweet.jst.ejs",
+		"/Users/seanglang/Desktop/webbly/techcareer/Projects/Minesweeper/minesweeper.css",
+		"/Users/seanglang/Desktop/webbly/techcareer/Projects/hangman/hangman.html",
+		"/Users/seanglang/Desktop/webbly/techcareer/Projects/hangman/hangman.js",
+		"/Users/seanglang/Desktop/webbly/techcareer/Projects/hangman/hangman2.js",
+		"/Users/seanglang/Desktop/webbly/techcareer/Projects/hangman/hangman.css",
+		"/Users/seanglang/Desktop/webbly/self/prime.js",
+		"/Users/seanglang/Desktop/webbly/self/prime.html",
+		"/Users/seanglang/Desktop/webbly/techcareer/application.html",
+		"/Users/seanglang/Desktop/Projects/css positioning/index.html",
+		"/Users/seanglang/Desktop/Projects/ttt/tictactoe.html",
+		"/Users/seanglang/Desktop/Projects/ttt/javatoe2.js",
+		"/Users/seanglang/Desktop/Projects/css positioning/xkcd.css",
+		"/Users/seanglang/Desktop/Projects/css positioning/notxkcd.html",
+		"/Users/seanglang/Desktop/Projects/ttt/javatoe.js",
+		"/Users/seanglang/Desktop/Projects/ttt/style.css",
+		"/Users/seanglang/Desktop/Projects/ttt/javatoe3.js",
+		"/Users/seanglang/Desktop/Projects/css positioning/position4.css",
+		"/Users/seanglang/tutor-collective/app/views/layouts/application.html",
+		"/Users/seanglang/Downloads/application.js"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"status",
+			"conatiner",
+			"data",
+			"0",
+			"8",
+			"7",
+			"bombSet",
+			"boardSet",
+			"board",
+			"marked",
+			"bombSet",
+			"bombset",
+			"minecount",
+			"bombed",
+			"minecount",
+			"wordtoplay",
+			"hangword",
+			"hasBomb",
+			"blind",
+			"markedBom",
+			"clicktile",
+			"debugg",
+			"x",
+			"used",
+			" letter",
+			"letter",
+			"group"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"container",
+			"?"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 2,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "app/assets/templates/tweet.jst.ejs",
+					"settings":
+					{
+						"buffer_size": 746,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								713,
+								713
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"syntax": "Packages/EJS/EJS_alternative.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 25.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "app/assets/javascripts/tweets.js",
+					"settings":
+					{
+						"buffer_size": 1777,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1080,
+								1080
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 630.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "app/assets/templates/summary.ejs",
+					"settings":
+					{
+						"buffer_size": 130,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								124,
+								124
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"auto_name": "",
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"syntax": "Packages/EJS/EJS_alternative.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "app/assets/stylesheets/static_pages.css.scss",
+					"settings":
+					{
+						"buffer_size": 1172,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								370,
+								370
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 42.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "app/assets/javascripts/tweets.json",
+					"settings":
+					{
+						"buffer_size": 36484,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								36484
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"syntax": "Packages/JavaScript/JSON.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"replace":
+	{
+		"height": 64.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"",
+				"app/assets/javascripts/application.js"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 258.0,
+	"status_bar_visible": true
+}

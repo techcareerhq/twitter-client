@@ -17,17 +17,23 @@ var orderThem = function (theArray, field){
 	});		
 };
 
-function group(theArray){
+
+
+
+function group(theArray, field){
 	for (var i = theArray.length - 1; i >= 0; i--) {	
-		if (friends.hasOwnProperty(theArray[i].user.location)) {
-			friends[theArray[i].user.location]++;
+		if (friends.hasOwnProperty(theArray[i][field[0]][field[1]])) {
+			friends[theArray[i][field[0]][field[1]]]++;
 		}
 		else {
-			friends[theArray[i].user.location]=1;
+			friends[theArray[i][field[0]][field[1]]]=1;
 		}	
 	};	
 
 	friendsArrayMake();
+
+	$('#sideInfo').html(summaryTemplate({data: friendsList}));
+
 	return friendsList;
 };
 
@@ -38,44 +44,55 @@ function friendsArrayMake() {
 	orderThem (friendsList, 'number');
 }
 
+function loadPage() {
+	$.ajax({
+	  url: "/api/retrieveTweets/abcd",
+	  type: "GET",
+	  success: function(response) {
+	  	window.statuses=response.statuses;
 
-$.ajax({
-  url: "/api/retrieveTweets/abcd",
-  type: "GET",
-  success: function(response) {
-  	window.statuses=response.statuses;
+	  	
+		$('.container').append("<div id='sideInfo' class='well'></div>");
+		$(".container").append("<div id='users' class='btn-group'></div>");
+		$.each(options.valueNames, function(key, something){
+			$("#users").append("<button class='sort btn btn-default' data-sort='"+something+"'>Sort by "+something+"</button>");
+		});
+		$("#users").append("<br><br><ul class='list'></ul>");
 
-  	
-	$('.container').append("<div id='sideInfo'></div>");
-	group(statuses);
-	
-	for (var i = 0; i < 3; i++) {
-		$('#sideInfo').append('<li>' +friendsList[i].name+ ' : ' +friendsList[i].number+'<li>');
-	};
+		orderThem(response.statuses, 'retweet_count');
 
-	
+		//output tweet info
+	    $.each(response.statuses, function(key, value){
+			$(".list").append(template({status: value}));		
+	    });
 
-	$(".container").append("<div id='users' class='btn-group'></div>");
-	$.each(options.valueNames, function(key, something){
-		$("#users").append("<button class='sort btn btn-default' data-sort='"+something+"'>Sort by "+something+"</button>");
+	    //listjs stuff
+		window.userList = new List('users', options);
+
+		group(statuses, ['user', 'location']);
+
+		
+
+
+	  }
 	});
-	$("#users").append("<br><br><ul class='list'></ul>");
+};
 
-	orderThem(response.statuses, 'retweet_count');
+// $(document).ready(function(){
+//     $(window).scrollTop(0);
+// });
 
-	//output tweet info
-    $.each(response.statuses, function(key, value){
-		$(".list").append(template({status: value}));		
-    });
+function bindScroll() {
+	$(window).scroll( function() {
 
-    //listjs stuff
-	window.userList = new List('users', options);
+		if (window.innerHeight + window.scrollY > $(document).innerHeight() -240) {
 
-	
-
-
-  }
-});
+		loadPage();
 
 
+		};
+	});
+}
 
+bindScroll();
+loadPage();

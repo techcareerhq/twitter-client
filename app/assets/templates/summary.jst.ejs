@@ -1,12 +1,11 @@
 
-<ul>
-	<% debugger %>
+<ul> 
 <% for (var i = 0; i < 3; i++) { %>
-	<% $('#sideInfo').append(%> 
+	
 	<li> <%=data[i].name  %> 
-		 --
+		 :
 		 <%=data[i].number %>
 		</li>
-		<% ); %>
+	
 	<%	};	%>
 </ul>
