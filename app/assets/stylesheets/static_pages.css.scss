@@ -3,46 +3,34 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 body {
- 
 background-color: #047060;
-background-repeat:no-repeat;
-background-attachment:fixed;
-background-position:center; 
-
 }
 .container{
     width: 100%;
-    display: table;
-   
+    display: table;  
 }
- #users {
-
+ .list, #users {
  float:left;
  width: 900px;
 }
-#sideInfo {
+.side {
   background-color: #950f31;
  color: white;
  margin-left: 930px;
-
 }
-
 span {
 	padding: 3px;
 	margin:2px;
 	text-align: center;
 	background-color:#f1f1f1;
-    border-width:2px;
-    border-style:solid;
-    border-bottom-color:#a1a1a1;
-    border-right-color:#a1a1a1;
-    border-top-color:#d1d1d1;
-    border-left-color:#d1d1d1;
-    border-radius:5px;
-    line-height: 30px;
-}
-li {
-  list-style-type: none;
+  border-width:2px;
+  border-style:solid;
+  border-bottom-color:#a1a1a1;
+  border-right-color:#a1a1a1;
+  border-top-color:#d1d1d1;
+  border-left-color:#d1d1d1;
+  border-radius:5px;
+  line-height: 30px;
 }
 
 .tweet {
@@ -50,26 +38,6 @@ li {
 	color: #950f31;
   font-weight:bold;
 }
-
-label {  
-  cursor: pointer;
-}
-input {
-  display: none;
-}
-
-#name-toggle:checked + .name {
-  display: none;
-}
-#retweeted-toggle:checked + .retweeted {
-  display: none;
-}
-#created-toggle:checked + .created {
-  display: none;
-}
-#followers-toggle:checked + .followers {
-  display: none;
-}
-#influence-toggle:checked + .influence {
-  display: none;
+li {
+  list-style: none;
 }

@@ -17,10 +17,13 @@
 	</span>
 	<span class='retweeted'>
 		Retweeted: 
+		<% Number(status.retweet_count).toLocaleString('en') %>
+	
 		<%= status.retweet_count %>
 	</span>
 	<span class='created'>
 		Created on: 
+		<% status.created_at=status.created_at.replace('+0000', '') %>
 		<%= status.created_at %>
 	</span> 
 
@@ -32,11 +35,11 @@
 	</span>
 	<span class='followers'>
 		Followers: 
-		<%= status.user.followers_count %>
+		<%= Number(status.user.followers_count).toLocaleString('en')%>
 	</span>
 	<span class='influence'>
 		Influence Score:
-		<%= (status.user.followers_count +(status.retweet_count*1000)) %>
+		<%= Number(status.user.followers_count +(status.retweet_count*1000)).toLocaleString('en') %>
 	</span>
 
 	<br>

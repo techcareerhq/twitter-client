@@ -1,5 +1,6 @@
 var template = JST["tweet"],
 	summaryTemplate = JST["summary"],
+	otherSummaryTemplate = JST["otherSummary"],
 	friends={},
 	friendsList =[],
 	options = {
@@ -21,6 +22,7 @@ var orderThem = function (theArray, field){
 
 
 function group(theArray, field){
+	friendsList=[];
 	for (var i = theArray.length - 1; i >= 0; i--) {	
 		if (friends.hasOwnProperty(theArray[i][field[0]][field[1]])) {
 			friends[theArray[i][field[0]][field[1]]]++;
@@ -32,16 +34,50 @@ function group(theArray, field){
 
 	friendsArrayMake();
 
-	$('#sideInfo').html(summaryTemplate({data: friendsList}));
+	$('.container').append("<div id='Locations' class='well side'>Locations</div>");
 
-	return friendsList;
+	$('#Locations').append(summaryTemplate({data: friendsList}));
+
+	
 };
 
 function friendsArrayMake() {
 	$.each(friends, function(city, count){			
-		 friendsList.push({name: city, number: count});
+		 friendsList.push({
+		 	name: city, 
+		 	number: count
+		 });
 	});
 	orderThem (friendsList, 'number');
+}
+
+function otherFriendsArrayMake(theArray, field) {
+	friendsList =[];
+	
+	if (field[3]){
+		for (var i = 0; i < theArray.length; i++) {
+			text  = theArray[i][field[0]],	
+			count = theArray[i][field[3]][field[1]];
+			friendsList.push({
+				key: text, 
+			 	value: count
+			 });
+		};
+	}
+	else {
+		for (var i = 0; i < theArray.length; i++) {
+			text  = theArray[i][field[0]],	
+			count = theArray[i][field[1]];
+			friendsList.push({
+				key: text, 
+			 	value: count
+			 });
+		};
+	 }
+	
+	orderThem (friendsList, 'value');
+	$('.container').append("<div id='"+field[2]+"' class='well side'>"+field[2]+"</div>");
+	$('#'+field[2]).append(otherSummaryTemplate({data: friendsList}));
 }
 
 function loadPage() {
@@ -52,7 +88,6 @@ function loadPage() {
 	  	window.statuses=response.statuses;
 
 	  	
-		$('.container').append("<div id='sideInfo' class='well'></div>");
 		$(".container").append("<div id='users' class='btn-group'></div>");
 		$.each(options.valueNames, function(key, something){
 			$("#users").append("<button class='sort btn btn-default' data-sort='"+something+"'>Sort by "+something+"</button>");
@@ -71,22 +106,21 @@ function loadPage() {
 
 		group(statuses, ['user', 'location']);
 
-		
+		otherFriendsArrayMake(statuses, ['text', 'retweet_count', 'Retweets', null])
+		otherFriendsArrayMake(statuses, ['text', 'followers_count', 'Followers', 'user'])		
 
 
 	  }
 	});
 };
 
-// $(document).ready(function(){
-//     $(window).scrollTop(0);
-// });
-
 function bindScroll() {
 	$(window).scroll( function() {
 
-		if (window.innerHeight + window.scrollY > $(document).innerHeight() -240) {
+		if (window.innerHeight + window.scrollY > $(document).innerHeight() -100) {
 
+
+		$('.side').remove(); //remove existing side divs so duplicates are not created
 		loadPage();
 
 
@@ -96,3 +130,4 @@ function bindScroll() {
 
 bindScroll();
 loadPage();
+

@@ -1,12 +1,11 @@
-
+Locations
 <ul>
-	<% debugger %>
 <% for (var i = 0; i < 3; i++) { %>
-	<% $('#sideInfo').append(%> 
-	<li> <%=data[i].name  %> 
-		 --
-		 <%=data[i].number %>
-		</li>
-		<% ); %>
-	<%	};	%>
+	<li> 
+		<%=data[i].name  %> 
+		<span class="label label-default">
+		<%=data[i].number %>
+		</span>
+	</li>
+<%	};	%>
 </ul>
