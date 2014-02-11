@@ -1,11 +1,11 @@
-
-<ul> 
+Locations
+<ul>
 <% for (var i = 0; i < 3; i++) { %>
-	
-	<li> <%=data[i].name  %> 
-		 :
-		 <%=data[i].number %>
-		</li>
-	
-	<%	};	%>
+	<li> 
+		<span class="label label-default">
+			<%= data[i].number %>
+		</span>
+		<%= data[i].name  %> 
+	</li>
+<%	};	%>
 </ul>

@@ -1,12 +1,11 @@
 
 <ul> 
 <% for (var i = 0; i < 3; i++) { %>
-	
-	<li> <span class="label label-default">
-		<%= Number(data[i].value).toLocaleString('en') %>
+	<li> 
+		<span class="label label-default">
+			<%= Number(data[i].value).toLocaleString('en') %>
 		</span>
 		 <%=data[i].key  %> 
-		</li>
-	<li></li>
+	</li>
 	<%	};	%>
 </ul>

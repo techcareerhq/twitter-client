@@ -7,21 +7,7 @@ var template = JST["tweet"],
   		valueNames: [ 'name', 'retweeted', 'created', 'followers', 'influence' ]
 	};
 
-var orderThem = function (theArray, field){
-	theArray.sort(function (a, b) {
-	    if (a[field] > b[field])
-	      return -1;
-	    if (a[field] < b[field])
-	      return 1;
-	    // a must be equal to b
-	    return 0;
-	});		
-};
-
-
-
-
-function group(theArray, field){
+function group(theArray, field){ //groups location info 
 	friendsList=[];
 	for (var i = theArray.length - 1; i >= 0; i--) {	
 		if (friends.hasOwnProperty(theArray[i][field[0]][field[1]])) {
@@ -33,15 +19,11 @@ function group(theArray, field){
 	};	
 
 	friendsArrayMake();
-
-	$('.container').append("<div id='Locations' class='well side'>Locations</div>");
-
+	$('.container').append("<div id='Locations' class='well side'></div>");
 	$('#Locations').append(summaryTemplate({data: friendsList}));
-
-	
 };
 
-function friendsArrayMake() {
+function friendsArrayMake() { //makes array to output to template
 	$.each(friends, function(city, count){			
 		 friendsList.push({
 		 	name: city, 
@@ -51,10 +33,21 @@ function friendsArrayMake() {
 	orderThem (friendsList, 'number');
 }
 
-function otherFriendsArrayMake(theArray, field) {
+var orderThem = function (theArray, field){ //orders by number value
+	theArray.sort(function (a, b) {
+	    if (a[field] > b[field])
+	      return -1;
+	    if (a[field] < b[field])
+	      return 1;
+	    // a must be equal to b
+	    return 0;
+	});		
+};
+
+function otherFriendsArrayMake(theArray, field) { //used for non-location fields
 	friendsList =[];
 	
-	if (field[3]){
+	if (field[3]){ //field[3] will almost always be "user", if it is used
 		for (var i = 0; i < theArray.length; i++) {
 			text  = theArray[i][field[0]],	
 			count = theArray[i][field[3]][field[1]];
@@ -64,7 +57,7 @@ function otherFriendsArrayMake(theArray, field) {
 			 });
 		};
 	}
-	else {
+	else { //for fields that don't need "user"
 		for (var i = 0; i < theArray.length; i++) {
 			text  = theArray[i][field[0]],	
 			count = theArray[i][field[1]];
@@ -87,7 +80,6 @@ function loadPage() {
 	  success: function(response) {
 	  	window.statuses=response.statuses;
 
-	  	
 		$(".container").append("<div id='users' class='btn-group'></div>");
 		$.each(options.valueNames, function(key, something){
 			$("#users").append("<button class='sort btn btn-default' data-sort='"+something+"'>Sort by "+something+"</button>");
@@ -106,7 +98,7 @@ function loadPage() {
 
 		group(statuses, ['user', 'location']);
 
-		otherFriendsArrayMake(statuses, ['text', 'retweet_count', 'Retweets', null])
+		otherFriendsArrayMake(statuses, ['text', 'retweet_count',   'Retweets',   null])
 		otherFriendsArrayMake(statuses, ['text', 'followers_count', 'Followers', 'user'])		
 
 
