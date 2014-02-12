@@ -9,6 +9,7 @@ var template = JST["tweet"],
 
 function group(theArray, field){ //groups location info 
 	friendsList=[];
+	debugger
 	for (var i = theArray.length - 1; i >= 0; i--) {	
 		if (friends.hasOwnProperty(theArray[i][field[0]][field[1]])) {
 			friends[theArray[i][field[0]][field[1]]]++;
@@ -19,8 +20,9 @@ function group(theArray, field){ //groups location info
 	};	
 
 	friendsArrayMake();
-	$('.container').append("<div id='Locations' class='well side'></div>");
-	$('#Locations').append(summaryTemplate({data: friendsList}));
+	return friendsList;
+	// $('#sideBar').append("<div id='Locations' class='well side'></div>");
+	// $('#Locations').append(summaryTemplate({data: friendsList}));
 };
 
 function friendsArrayMake() { //makes array to output to template
@@ -69,7 +71,7 @@ function otherFriendsArrayMake(theArray, field) { //used for non-location fields
 	 }
 	
 	orderThem (friendsList, 'value');
-	$('.container').append("<div id='"+field[2]+"' class='well side'>"+field[2]+"</div>");
+	$('#sideBar').append("<div id='"+field[2]+"' class='well side'>"+field[2]+"</div>");
 	$('#'+field[2]).append(otherSummaryTemplate({data: friendsList}));
 }
 
@@ -84,7 +86,7 @@ function loadPage() {
 		$.each(options.valueNames, function(key, something){
 			$("#users").append("<button class='sort btn btn-default' data-sort='"+something+"'>Sort by "+something+"</button>");
 		});
-		$("#users").append("<br><br><ul class='list'></ul>");
+		$("#users").append("<ul class='list'></ul>");
 
 		orderThem(response.statuses, 'retweet_count');
 
@@ -96,14 +98,9 @@ function loadPage() {
 	    //listjs stuff
 		window.userList = new List('users', options);
 
-		group(statuses, ['user', 'location']);
-
-		otherFriendsArrayMake(statuses, ['text', 'retweet_count',   'Retweets',   null])
-		otherFriendsArrayMake(statuses, ['text', 'followers_count', 'Followers', 'user'])		
-
-
 	  }
 	});
+	loadPage();
 };
 
 function bindScroll() {
@@ -120,6 +117,59 @@ function bindScroll() {
 	});
 }
 
-bindScroll();
-loadPage();
+
+
+function startPage(){
+	var workingModel = new twitterModel();
+	new TwitterView({model: workingModel});
+	window.workingModel = workingModel;
+}
+
+$(document).ready(loadPage);
+
+
+var TwitterView = Backbone.View.extend({
+
+	initialize: function() {
+ 		this.render();
+ 		this.model.on('change', this.render, this);
+ 		
+	},
+
+	render: function() {
+		var local = group('statuses', ['user', 'location']);
+  	$(this.el).append(this.model.get(local))
+  	
+  	// for (var i = 0; i < this.model.get('stuff').length; i++) {
+  	// 	this.model.get('locationPane')[i]
+  	// };
+  	
+	// group('statuses', ['user', 'location']);
+	},
+
+	el: '#sideBar',
+
+	clicked: function(){
+		
+	},
+
+	events: {
+		'click': 'clicked'
+
+	}
+
+});
+
+var twitterModel = Backbone.Model.extend({
+	defaults: {
+		locationPane: ['statuses', ['user', 'location']],
+		retweetPane: ['statuses', ['text', 'retweet_count',   'Retweets',   null]],
+		followerPane: ['statuses', ['text', 'followers_count', 'Followers', 'user']]
+	}
+
+});
+
+
+
+
 
