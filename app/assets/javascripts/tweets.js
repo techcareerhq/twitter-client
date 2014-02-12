@@ -100,7 +100,7 @@ function loadPage() {
 
 	  }
 	});
-	loadPage();
+	startPage();
 };
 
 function bindScroll() {
