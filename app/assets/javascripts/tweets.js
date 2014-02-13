@@ -120,31 +120,23 @@ function bindScroll() {
 
 
 function startPage(){
-	var workingModel = new twitterModel();
-	new TwitterView({model: workingModel});
-	window.workingModel = workingModel;
+	window.myTweets = new Tweets();
+	window.myTweets.fetch();
+	new TwitterView({collection: window.myTweets});
 }
 
 $(document).ready(loadPage);
 
 
+
 var TwitterView = Backbone.View.extend({
 
 	initialize: function() {
- 		this.render();
- 		this.model.on('change', this.render, this);
- 		
+		this.collection.on('reset', this.render, this)
 	},
 
 	render: function() {
-		var local = group('statuses', ['user', 'location']);
-  	$(this.el).append(this.model.get(local))
-  	
-  	// for (var i = 0; i < this.model.get('stuff').length; i++) {
-  	// 	this.model.get('locationPane')[i]
-  	// };
-  	
-	// group('statuses', ['user', 'location']);
+	debugger
 	},
 
 	el: '#sideBar',
@@ -155,21 +147,20 @@ var TwitterView = Backbone.View.extend({
 
 	events: {
 		'click': 'clicked'
-
 	}
+});
+
+var Tweet = Backbone.Model.extend({
 
 });
 
-var twitterModel = Backbone.Model.extend({
-	defaults: {
-		locationPane: ['statuses', ['user', 'location']],
-		retweetPane: ['statuses', ['text', 'retweet_count',   'Retweets',   null]],
-		followerPane: ['statuses', ['text', 'followers_count', 'Followers', 'user']]
-	}
-
+var Tweets = Backbone.Collection.extend({
+	url: "/api/retrieveTweets/abcd",
+	model: Tweet,
+	parse: function(response) {
+    	return response.statuses;
+ 	}
 });
-
-
 
 
 
