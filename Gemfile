@@ -6,7 +6,8 @@ gem 'rails', '3.2.13'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
-
+gem 'bcrypt-ruby', :require => 'bcrypt'
+gem 'email_validator'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -22,10 +23,12 @@ end
 
 gem 'jquery-rails', '2.1.3'
 
+gem "pry-rails", "~> 0.3.2"
 gem "twitter", "~> 5.5.1"
 gem "ejs"
 gem 'bootstrap-sass', '~> 3.0.2.0'
 gem 'rails-backbone'
+gem 'rails_12factor'
 
 
 # To use ActiveModel has_secure_password
@@ -42,4 +45,3 @@ gem 'rails-backbone'
 
 # To use debugger
 # gem 'debugger'
-

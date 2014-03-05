@@ -1,0 +1,15 @@
+<div id='login-view'>
+  <aside>
+    <h1>Sean's Twitter Client</h1>
+  </aside>
+  <%= form_tag session_path do %>
+    <%= label_tag :email %>
+    <%= text_field_tag :email, params[:email] %>
+
+    <%= label_tag :password %>
+    <%= password_field_tag :password %>
+
+    <%= submit_tag "Log In" %>
+  <% end %>
+  <div class='clear'></div>
+</div>
