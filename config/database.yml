@@ -6,6 +6,7 @@
 development:
   adapter: postgresql
   database: production.postgresql
+  encoding: utf8
   pool: 5
   timeout: 5000
   # username: postgres
@@ -17,11 +18,13 @@ development:
 test:
   adapter: postgresql
   database: production.postgresql
+  encoding: utf8
   pool: 5
   timeout: 5000
 
 production:
   adapter: postgresql
   database: production.postgresql
+  encoding: utf8
   pool: 5
   timeout: 5000
