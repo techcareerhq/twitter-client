@@ -1,11 +1,6 @@
-
-<ul> 
-<% for (var i = 0; i < 3; i++) { %>
-	<li> 
-		<span class="label label-default">
-			<%= Number(data[i].value).toLocaleString('en') %>
-		</span>
-		 <%=data[i].key  %> 
-	</li>
-	<%	};	%>
-</ul>
+<li> 
+	<span class="label label-default">
+		<%= Number(status.retweet_count).toLocaleString('en') %>
+	</span>
+	 <%= status.text %> 
+</li>

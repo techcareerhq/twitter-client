@@ -1,0 +1,58 @@
+
+
+
+
+
+			
+<li>
+	<span class ='tweet'>
+		<%= status.get('text') %>
+	</span>
+	
+	<br>
+
+	<span class='name'>
+		Author: 
+		<%= status.get('user').name %>
+	</span><!-- 
+	<span class='retweeted'>
+		Retweeted: 
+		<% Number(status.retweet_count).toLocaleString('en') %>
+	
+		<%= status.retweet_count %>
+	</span>
+	<span class='created'>
+		Created on: 
+		<% status.created_at=status.created_at.replace('+0000', '') %>
+		<%= status.created_at %>
+	</span> 
+
+	<br>
+	
+	<span class='name'>
+		User Name: 
+		<%= status.user.screen_name %>
+	</span>
+	<span class='followers'>
+		Followers: 
+		<%= Number(status.user.followers_count).toLocaleString('en')%>
+	</span>
+	<span class='influence'>
+		Influence Score:
+		<%= Number(status.user.followers_count +(status.retweet_count*1000)).toLocaleString('en') %>
+	</span>
+
+	<br>
+
+	<% if ('media' in status.entities){ %>
+		<img src="
+		<%= status.entities.media[0].media_url %>
+		" /> 
+	<% } %>
+	<br>
+	<br> -->
+		
+</li>		
+				
+		
+

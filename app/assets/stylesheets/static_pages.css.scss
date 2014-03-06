@@ -7,20 +7,18 @@ background-color: #047060;
 }
 .container{
     width: 100%;
-    display: table;  
 }
  .list, #users {
  float:left;
  width: 900px;
 }
 #sideBar{
-  margin-left: 930px;
+  color: white;
+  overflow: hidden;
 }
-.side  {
+.rt, .fl, .lc {
   background-color: #950f31;
- color: white;
-
-
+  float:right;
 }
 span {
 	padding: 3px;
