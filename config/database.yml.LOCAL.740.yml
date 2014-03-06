@@ -21,11 +21,7 @@ test:
   timeout: 5000
 
 production:
-<<<<<<< HEAD
   adapter: postgresql
-=======
-   adapter: postgresql
->>>>>>> 030c0be73c09b2be078e9925b7a7979f56e3d885
   database: production.postgresql
   pool: 5
   timeout: 5000
