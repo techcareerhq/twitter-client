@@ -8,8 +8,6 @@ development:
   database: db/production.sqlite3
   pool: 5
   timeout: 5000
-  # username: postgres
-  # password: svensven
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
