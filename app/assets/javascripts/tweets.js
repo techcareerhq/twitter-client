@@ -17,8 +17,12 @@ function postTweet() {
       username: "first last",
       message: "hello"
     },
-    success: function(){
+    success: function(response){
+      debugger;
+    }, 
+    error: function(xhr, status, error) {
       debugger;
     }
+
   })
 }
