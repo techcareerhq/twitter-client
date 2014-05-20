@@ -12,14 +12,14 @@ $.ajax({
 function postTweet() {
   $.ajax({
     type: "post",
-    url:"/api/posttweet",
+    url:"/api/postTweet",
     data: {
       username: "first last",
       message: "hello"
     },
     success: function(response){
       debugger;
-    }, 
+    },
     error: function(xhr, status, error) {
       debugger;
     }

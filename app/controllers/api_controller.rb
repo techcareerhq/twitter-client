@@ -15,7 +15,7 @@ require 'twitter'
   def postTweet
     if params.has_key?(:message) && params.has_key?(:username)
       message = { :message => "Your response has been successfully posted."}
-      render :json => message
+      render :json => message, :status => 200
     else
       message = 'There was an error with your response.'
       render :json => {:error => message}.to_json, :status => 500

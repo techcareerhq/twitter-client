@@ -7,7 +7,7 @@ TwitterApi::Application.routes.draw do
 
   get "api/retrieveTweets/:id" => "api#retrieveTweets"
 
-  post "api/posttweet" => "api#postTweet"
+  post "api/postTweet" => "api#postTweet"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
